@@ -7,8 +7,6 @@ interface ImportMetaEnv {
   readonly VITE_GOOGLE_CALENDAR_ID?: string
   /** IANA timezone used to display event times (e.g. America/Sao_Paulo). */
   readonly VITE_GOOGLE_TIMEZONE?: string
-  /** Display name shown in the header. */
-  readonly VITE_LODGE_NAME?: string
 }
 
 interface ImportMeta {

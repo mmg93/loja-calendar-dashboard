@@ -10,7 +10,6 @@ export const config = {
   apiKey: (import.meta.env.VITE_GOOGLE_API_KEY ?? '').trim(),
   calendarId: (import.meta.env.VITE_GOOGLE_CALENDAR_ID ?? '').trim(),
   timeZone: (import.meta.env.VITE_GOOGLE_TIMEZONE || 'America/Sao_Paulo').trim(),
-  lodgeName: (import.meta.env.VITE_LODGE_NAME || 'Loja Maçônica').trim(),
 } as const
 
 /** True only when the calendar can actually be queried. */

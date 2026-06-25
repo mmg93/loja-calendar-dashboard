@@ -62,7 +62,6 @@ API key precisa ser tratada como pública e restrita (veja abaixo).
 VITE_GOOGLE_API_KEY=AIza...           # key pública restrita
 VITE_GOOGLE_CALENDAR_ID=abc123@group.calendar.google.com
 VITE_GOOGLE_TIMEZONE=America/Sao_Paulo
-VITE_LODGE_NAME=Loja Maçônica Exemplo
 ```
 
 ## Google: API key, restrições e Calendar ID
@@ -121,8 +120,7 @@ build e publica a cada push na branch `main`.
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Settings → Secrets and variables → Actions:**
    - **Secrets** → `VITE_GOOGLE_API_KEY` (a key **de produção**, restrita).
-   - **Variables** → `VITE_GOOGLE_CALENDAR_ID`, `VITE_GOOGLE_TIMEZONE`,
-     `VITE_LODGE_NAME`.
+   - **Variables** → `VITE_GOOGLE_CALENDAR_ID` e `VITE_GOOGLE_TIMEZONE`.
 3. Faça push para `main`. A aba **Actions** mostra build/deploy; ao final a URL fica
    em **Settings → Pages**.
 

@@ -44,7 +44,6 @@ jobs:
           VITE_GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
           VITE_GOOGLE_CALENDAR_ID: ${{ vars.VITE_GOOGLE_CALENDAR_ID }}
           VITE_GOOGLE_TIMEZONE: ${{ vars.VITE_GOOGLE_TIMEZONE }}
-          VITE_LODGE_NAME: ${{ vars.VITE_LODGE_NAME }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
