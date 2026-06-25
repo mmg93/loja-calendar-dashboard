@@ -13,7 +13,6 @@ interface GoogleEvent {
   summary?: string
   description?: string
   location?: string
-  htmlLink?: string
   start?: GoogleDateTime
   end?: GoogleDateTime
 }
@@ -72,7 +71,6 @@ function normalize(item: GoogleEvent): CalendarEvent | null {
     end,
     location: cleanText(item.location),
     description: cleanText(item.description),
-    htmlLink: item.htmlLink ?? '',
     isAllDay,
   }
 }

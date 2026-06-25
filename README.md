@@ -28,7 +28,7 @@ restrita** e atualiza sozinho a cada 60 minutos.
 2. O frontend chama a Google Calendar API (`calendars/{id}/events`) com a API key
    pública restrita — não existe rota `/api/...`, webhook, websocket nem OAuth.
 3. Os eventos são normalizados para `{ id, title, start, end, location, description,
-   htmlLink, isAllDay }`.
+   isAllDay }`.
 4. A interface mostra resumo (*Hoje*, *Esta semana*, *Próximos*, *Próxima sessão*),
    agenda e calendário mensal.
 5. Re-consulta automática a cada **60 min** (`60 * 60 * 1000 = 3.600.000 ms`), além

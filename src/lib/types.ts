@@ -6,6 +6,5 @@ export interface CalendarEvent {
   end: Date
   location: string
   description: string
-  htmlLink: string
   isAllDay: boolean
 }
