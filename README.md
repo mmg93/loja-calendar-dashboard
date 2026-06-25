@@ -7,7 +7,7 @@ restrita** e atualiza sozinho a cada 60 minutos.
 
 - **URL de produção:** `https://mmg93.github.io/loja-calendar-dashboard/`
 - Abre direto na **agenda** (lista cronológica), com visão de **mês** no desktop.
-- Janela exibida: **30 dias atrás → 180 dias à frente**, ordenada por data.
+- Janela exibida: **30 dias atrás → 1 ano à frente**, ordenada por data.
 
 ## Stack
 

@@ -15,9 +15,9 @@ export const config = {
 /** True only when the calendar can actually be queried. */
 export const isConfigured = Boolean(config.apiKey && config.calendarId)
 
-/** Event window: 30 days before today until 180 days after today. */
+/** Event window: 30 days before today until one year (365 days) after today. */
 export const PAST_WINDOW_DAYS = 30
-export const FUTURE_WINDOW_DAYS = 180
+export const FUTURE_WINDOW_DAYS = 365
 
 /** Automatic polling interval: 60 minutes = 60 * 60 * 1000 ms. */
 export const POLL_INTERVAL_MS = 60 * 60 * 1000

@@ -53,7 +53,7 @@ export function EmptyState({ onRefresh }: { onRefresh: () => void }) {
   return (
     <Panel icon={<CalendarOff className="h-6 w-6" />} title="Nenhum evento público">
       <p className="mx-auto max-w-md text-sm text-ink-soft">
-        Não há eventos entre 30 dias atrás e os próximos 180 dias. Novos eventos do
+        Não há eventos entre 30 dias atrás e o próximo ano. Novos eventos do
         Google Agenda aparecerão aqui automaticamente.
       </p>
       <Button variant="outline" size="sm" onClick={onRefresh} className="mt-5">
