@@ -80,14 +80,19 @@ export function relativeDayLabel(dayKey: string): string | null {
   return null
 }
 
-/** Compact "when" used on the next-session card: "Qua, 25 jun · 19:00". */
-export function formatEventWhen(event: CalendarEvent): string {
+/** Pieces for the prominent next-session date block (incl. Anno Lucis year). */
+export function heroDateParts(event: CalendarEvent) {
   const key = eventDayKey(event)
-  const parts = dayMarkerParts(key)
-  const relative = relativeDayLabel(key)
-  const datePart = relative ?? `${parts.weekday}, ${Number(parts.day)} ${parts.month.toLowerCase()}`
-  if (event.isAllDay) return `${datePart} · Dia inteiro`
-  return `${datePart} · ${formatInTimeZone(event.start, TZ, 'HH:mm')}`
+  const date = parseISO(key)
+  const year = Number(format(date, 'yyyy'))
+  return {
+    label: relativeDayLabel(key) ?? capitalize(format(date, 'EEEE', { locale: ptBR })),
+    day: format(date, 'd'),
+    month: capitalize(format(date, 'MMMM', { locale: ptBR })),
+    year,
+    annoLucis: year + 4000,
+    time: formatEventTime(event),
+  }
 }
 
 export function formatLastUpdated(timestamp: number | null): string {
