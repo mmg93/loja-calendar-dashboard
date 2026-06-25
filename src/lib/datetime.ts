@@ -100,7 +100,7 @@ export function formatLastUpdated(timestamp: number | null): string {
   return `Atualizado às ${formatInTimeZone(new Date(timestamp), TZ, 'HH:mm')}`
 }
 
-/** Long, human date for agenda day headers: "Quarta-feira, 25 de junho". */
+/** Long, human date for agenda day headers: "Quarta-feira, 25 de junho de 2026". */
 export function formatDayHeading(dayKey: string): string {
-  return capitalize(format(parseISO(dayKey), "EEEE, d 'de' MMMM", { locale: ptBR }))
+  return capitalize(format(parseISO(dayKey), "EEEE, d 'de' MMMM 'de' yyyy", { locale: ptBR }))
 }
