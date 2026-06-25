@@ -78,18 +78,22 @@ function NextSession({ event }: { event: CalendarEvent | null }) {
           <h2 className="mt-2 font-display text-2xl leading-snug text-paper line-clamp-2 sm:text-3xl">
             {event.title}
           </h2>
-          <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-paper/75">
-            <span className="inline-flex items-center gap-2">
-              <Clock className="h-4 w-4 shrink-0 text-brass-300" />
-              {d.time}
-            </span>
-            {event.location && (
-              <span className="inline-flex min-w-0 items-center gap-2">
-                <MapPin className="h-4 w-4 shrink-0 text-brass-300" />
-                <span className="truncate">{event.location}</span>
-              </span>
-            )}
-          </div>
+          {(!event.isAllDay || event.location) && (
+            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-sm text-paper/75">
+              {!event.isAllDay && (
+                <span className="inline-flex items-center gap-2">
+                  <Clock className="h-4 w-4 shrink-0 text-brass-300" />
+                  {d.time}
+                </span>
+              )}
+              {event.location && (
+                <span className="inline-flex min-w-0 items-center gap-2">
+                  <MapPin className="h-4 w-4 shrink-0 text-brass-300" />
+                  <span className="truncate">{event.location}</span>
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </div>
     </div>

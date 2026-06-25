@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { ExternalLink, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 import type { CalendarEvent } from '../lib/types'
 import { formatEventTime } from '../lib/datetime'
 import { cn } from '../lib/utils'
@@ -11,10 +10,6 @@ interface EventCardProps {
 }
 
 export function EventCard({ event, muted = false, highlight = false }: EventCardProps) {
-  const [expanded, setExpanded] = useState(false)
-  const description = event.description
-  const isLong = description.length > 140
-
   return (
     <article
       className={cn(
@@ -25,7 +20,7 @@ export function EventCard({ event, muted = false, highlight = false }: EventCard
         highlight && 'border-l-2 border-l-brass',
       )}
     >
-      <div className="flex items-baseline justify-between gap-3">
+      {!event.isAllDay && (
         <span
           className={cn(
             'font-display text-sm tracking-wide tabular-nums',
@@ -34,7 +29,7 @@ export function EventCard({ event, muted = false, highlight = false }: EventCard
         >
           {formatEventTime(event)}
         </span>
-      </div>
+      )}
 
       <h3 className="mt-1 text-[15px] font-semibold leading-snug text-ink wrap-anywhere">
         {event.title}
@@ -47,40 +42,11 @@ export function EventCard({ event, muted = false, highlight = false }: EventCard
         </p>
       )}
 
-      {description && (
-        <p
-          className={cn(
-            'mt-2 text-[13px] leading-relaxed whitespace-pre-line text-ink-soft wrap-anywhere',
-            !expanded && 'line-clamp-2',
-          )}
-        >
-          {description}
+      {event.description && (
+        <p className="mt-2 text-[13px] leading-relaxed whitespace-pre-line text-ink-soft wrap-anywhere">
+          {event.description}
         </p>
       )}
-
-      <div className="mt-2.5 flex items-center gap-4">
-        {description && isLong && (
-          <button
-            type="button"
-            onClick={() => setExpanded((value) => !value)}
-            aria-expanded={expanded}
-            className="text-[12px] font-medium text-brass-700 underline-offset-2 hover:underline"
-          >
-            {expanded ? 'Ver menos' : 'Ver mais'}
-          </button>
-        )}
-        {event.htmlLink && (
-          <a
-            href={event.htmlLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[12px] font-medium text-ink-faint hover:text-brass-700"
-          >
-            Ver no Google Agenda
-            <ExternalLink className="h-3 w-3" />
-          </a>
-        )}
-      </div>
     </article>
   )
 }
