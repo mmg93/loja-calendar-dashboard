@@ -5,7 +5,7 @@ público** de uma Loja Maçônica. Sem backend, sem banco de dados, sem autentic
 o navegador consulta a Google Calendar API diretamente com uma **API key pública e
 restrita** e atualiza sozinho a cada 60 minutos.
 
-- **URL de produção:** `https://mmg93.github.io/loja-calendar-dashboard/`
+- **URL de produção:** `https://calendariobeitel.online/`
 - Abre direto na **agenda** (lista cronológica), com visão de **mês** no desktop.
 - Janela exibida: **30 dias atrás → 1 ano à frente**, ordenada por data.
 
@@ -41,7 +41,7 @@ Pré-requisitos: **Node 20+** e npm.
 ```bash
 npm install
 cp .env.example .env.local   # preencha os valores reais
-npm run dev                  # http://localhost:5173/loja-calendar-dashboard/
+npm run dev                  # http://localhost:5173/
 ```
 
 Outros comandos:
@@ -81,9 +81,8 @@ permita apenas seus domínios:
 ```
 https://mmg93.github.io/*
 https://mmg93.github.io/loja-calendar-dashboard/*
-# se usar domínio próprio:
-https://seudominio.com/*
-https://www.seudominio.com/*
+https://calendariobeitel.online/*
+https://www.calendariobeitel.online/*
 ```
 
 > Não use restrição por **IP** — as chamadas partem dos navegadores dos visitantes.
